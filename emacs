@@ -64,7 +64,7 @@
 (define-key evil-normal-state-map (kbd "C-l") 'windmove-right)
 (define-key evil-normal-state-map (kbd "C-k") 'windmove-up)
 (define-key evil-normal-state-map (kbd "C-j") 'windmove-down)
-(key-chord-define evil-insert-state-map "jk" 'evil-normal-state)
+(key-chord-define evil-insert-state-map "jj" 'evil-normal-state)
 (key-chord-define evil-normal-state-map ",," 'evil-buffer)
 (key-chord-mode 1)
 (evil-leader/set-leader ",")
@@ -79,18 +79,6 @@
 (add-to-list 'dired-omit-extensions ".pyc")
 (add-hook 'dired-mode-hook (lambda () (dired-omit-mode 1)))
 
-(setq inferior-lisp-program "sbcl"
-      common-lisp-hyperspec-root (expand-file-name "~/Documents/HyperSpec/"))
-
-(setq slime-lisp-implementations
-      '((sbcl    ("sbcl"))
-	(ccl     ("ccl"))
-	(allegro ("alisp"))
-	(clisp   ("clisp"))))
-
-(slime-setup
- '(slime-repl
-   slime-banner
-   slime-editing-commands
-   slime-fuzzy
-   slime-presentations))
+(load (expand-file-name "~/quicklisp/slime-helper.el"))
+;; Replace "sbcl" with the path to your implementation
+(setq inferior-lisp-program "sbcl")
