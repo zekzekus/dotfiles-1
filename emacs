@@ -32,7 +32,7 @@
 (require 'cl-lib)
 (defvar package-list
   '(rainbow-mode
-    molokai-theme
+    solarized-theme
     exec-path-from-shell
     evil
     evil-leader
@@ -49,7 +49,7 @@
     (package-refresh-contents)
     (mapcar #'package-install uninstalled-packages)))
 
-(load-theme 'molokai t)
+(load-theme 'solarized-dark t)
 
 (when (memq window-system '(mac ns))
   (exec-path-from-shell-initialize))
