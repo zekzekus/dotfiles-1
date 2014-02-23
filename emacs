@@ -33,7 +33,6 @@
 (defvar package-list
   '(rainbow-mode
     molokai-theme
-    slime
     exec-path-from-shell
     evil
     evil-leader
